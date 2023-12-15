@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Google Sheets Clone</title>
+    <link rel="icon" href="./Image Assets/google-sheets-icon.svg">
+    <link rel="stylesheet" href="./body-styles.css" />
+    <link rel="stylesheet" href="./toolbar-styles.css" />
+    <link rel="stylesheet" href="./footer-styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <div id="options">
+        <div class="container">
+            <div class="sheet-icon">
+                <img id="sheets-logo" src="./Images/th.jpeg" alt="Google-sheets-logo">
+            </div>
+            <div class="file-name">Google Sheet Clone</div>
+            <div class="toolbar-menus">
+                <ul>
+                    <li>File</li>
+                    <li>Edit</li>
+                    <li>View</li>
+                    <li>Insert</li>
+                    <li>Format</li>
+                    <li>Data</li>
+                    <li>Tools</li>
+                    <li>Extensions</li>
+                    <li>Help</li>
+                </ul>
+            </div>
+          </div>
+        <div class="menus">
+            <!-- UI contents -> include functionality afterwards -->
+            <span class="material-icons copy">
+                content_copy
+            </span>
+            <span class="material-icons cut">
+                content_cut
+            </span>
+            <span class="material-icons paste">
+                content_paste
+            </span>
+
+            <!-- Font family -->
+            <select id="font-family" onchange="onChangeFontFamily(this)">
+                <option value="Times">Times (Default)</option>
+                <option value="sans-serif">Sans-sarif</option>
+                <option value="monospace">Monospace</option>
+                <option value="Poppins">Poppins</option>
+                <option value="cursive">Gabarito</option>
+            </select>
+
+            <!-- Font size -->
+            <input type="number" id="font-size" onchange="onChangeFontSize(this)" placeholder="16" />
+
+            <!-- Bold, Italic, Underlined -->
+            <div id="bold" onclick="onClickBold(this)">
+                <span class="material-icons bold">format_bold</span>
+            </div>
+            <div id="italic" onclick="onClickItalic(this)">
+                <span class="material-icons italic">format_italic</span>
+            </div>
+            <div id="underlined" onclick="onClickUnderline(this)">
+                <span class="material-icons underline">format_underlined</span>
+            </div>
+
+            <!-- text Align -->
+            <div class="material-icons text-align" data-value="start" onclick="onClickTextAlign(this)">
+                format_align_left
+            </div>
+            <div class="material-icons text-align" data-value="center" onclick="onClickTextAlign(this)">
+                format_align_center
+            </div>
+            <div class="material-icons text-align" data-value="right" onclick="onClickTextAlign(this)">
+                format_align_right
+            </div>
+
+            <!-- Text color -->
+            <div id="text-color">
+                <label for="color-picker"><span class="material-icons"> border_color </span></label>
+                <input onchange="onChangeTextColor(this)" type="color" id="color-picker"
+                    style="width: 0; height: 0; visibility: hidden;" />
+            </div>
+
+            <!-- Background color -->
+            <div id="bg-color">
+                <label for="bgcolor-picker"><span class="material-icons"> format_color_fill </span></label>
+                <input onchange="onChangeBackgroundColor(this)" type="color" id="bgcolor-picker"
+                    style="width: 0; height: 0; visibility: hidden;" />
+            </div>
+            <!-- import and export -->
+            <div class="material-icons download">
+                cloud_download
+            </div>
+            <div class="material-icons open">
+                cloud_upload
+            </div>
+        </div>
+        <div id="cell-value-display">
+            <span id="active-cell"></span>
+            <span class="material-symbols-outlined" style="opacity: 0.4;">function</span>
+            <input id="cell-input-show-bar" type="text">
+        </div>
+    </div>
+
+    <main style="width: 100vw; margin: auto; height: 100vh; overflow: scroll">
+        <div id="header">
+            <b style="position: sticky; left: 0; top: 0; background-color: white">S.No</b>
+        </div>
+        <section id="body"></section>
+    </main>
+    <footer>
+        <span class="material-symbols-outlined"onclick="addNewSheet()">add</span>
+        <span class="material-symbols-outlined">menu</span>
+        <div>
+         <span>Sheet 1</span>
+    </div>
+    <div id="sheet-list" class="sheet-list"></div>
+    </footer>
+
+    <script src="./toolbar-script.js"></script>
+    <script src="./dynamic-cell-creation.js"></script>
+    <script src="./onclick-functions.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+footer{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 3px 30px;
+  position: sticky;
+  bottom: 0px;
+  left: 0px;
+  background-color: #edf2fa;
+}
+footer > div{
+  display: flex;
+  align-items: center;
+  background-color: aliceblue;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+footer > span{
+  padding: 10px;
+}
+footer > span:hover, footer > div:hover{
+  cursor: pointer;
+  background-color: #d0d8e0aa
+}
+footer > div:hover{
+  background-color: rgb(221, 238, 252);
+}
+
+.sheet-list {
+  display: flex;
+  margin-right: 10px; /* Adjust as needed */
+}
+
+.button {
+  padding: 10px;
+  margin: 5px;
+  background-color:  aliceblue;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color:#d0d8e0aa;
+}
+
+
+
+ 

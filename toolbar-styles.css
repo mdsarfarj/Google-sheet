@@ -1,0 +1,104 @@
+/* row 1 */
+.container {
+  display: grid;
+  grid-template-columns: 20px 20px 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "sheet-icon sheet-icon file-name file-name"
+    "sheet-icon sheet-icon toolbar-menus toolbar-menus";
+}
+#sheets-logo{
+  width: 35px;
+  height: 50px;
+  object-fit: cover;
+}
+.sheet-icon {
+  grid-area: sheet-icon;
+}
+.file-name {
+  grid-area: file-name;
+  font-weight: 500;
+  font-size: 25px;
+  padding-left: 5px;
+}
+.toolbar-menus {
+  grid-area: toolbar-menus;
+}
+.toolbar-menus > ul{
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+.toolbar-menus > ul > li{
+  padding: 3px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.toolbar-menus > ul > li:hover{
+  background-color: #e5e3e3;
+}
+
+/* row 2 */
+#options {
+  padding: 10px;
+  background-color: #f8fbfd;
+  border-radius: 10px;
+}
+.menus {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background-color: #edf2fa;
+}
+
+.active-option {
+  background-color: #d3e2fd;
+}
+
+.menus > div,
+.menus > span {
+  padding: 5px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 4px;
+}
+.menus > div:hover,
+.menus > span:hover {
+  background-color: #d0d8e0aa;
+}
+/* row 3 --> cell value display */
+#cell-value-display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  padding: 4px 0;
+}
+#active-cell {
+  border-radius: 5px;
+  width: 30px;
+  text-align: center;
+}
+#active-cell:hover {
+  background-color: #c7c7c7;
+}
+#cell-input-show-bar {
+  width: 100%;
+  border: none;
+}
+#font-family{
+  width: 150px;
+  height: 25px;
+  border: none;
+}
+#font-size{
+  width: 40px;
+  height: 22px;
+  border: none;
+}
+#cell-input-show-bar:focus, #font-family:focus, #font-size:focus {
+  outline: none;
+}
